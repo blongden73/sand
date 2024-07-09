@@ -263,6 +263,11 @@ body {
   font-family: Open Sans, sans-serif;
   font-size: 22px;
   padding: 0 0 40px 0;
+  color: #fff;
+}
+
+.tabs > div {
+  color: #fff;
 }
 
 .tabs div {
@@ -334,4 +339,8 @@ body { font-family: sans-serif; }
 }
 .map.hide {
   display: none;
+}
+
+.gallery {
+  background-color: #133c5d;
 }
