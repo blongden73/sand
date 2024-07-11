@@ -77,6 +77,7 @@ body {
 .map {
   width: 100%;
   height: 100vh;
+  margin-bottom: -5px;
 }
 
 .image-2 {
@@ -97,8 +98,9 @@ body {
   align-items: flex-start;
 }
 
-.update-results-button {
-  background-color: #fff;
+.update-results-button, .reset-filters-button {
+  background-color: #214F73;
+  color: #fff;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
@@ -107,6 +109,14 @@ body {
   font-size: 20px;
   font-weight: 600;
   text-transform: capitalize;
+  margin-top: 28px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.update-results-button:hover, .reset-filters-button:hover {
+  background-color: #fff;
+  color: #214F73;
 }
 
 .heading-2 {
@@ -302,10 +312,16 @@ body { font-family: sans-serif; }
 }
 
 .gallery-cell {
-  width: 80%;
+  width: 65%;
   height: auto;
   margin-right: 10px;
   counter-increment: gallery-cell;
+  padding-bottom: 20px;
+  opacity: 0.2;
+}
+
+.is-selected {
+  opacity: 1;
 }
 
 /* cell number */
@@ -318,8 +334,8 @@ body { font-family: sans-serif; }
   color: white;
 } */
 
-.flickity-page-dots {
-  bottom: 0 !important;
+.gallery .flickity-page-dots {
+  bottom: 20px !important;
 }
 
 .resort-selector {
@@ -343,4 +359,125 @@ body { font-family: sans-serif; }
 
 .gallery {
   background-color: #133c5d;
+}
+
+.active-tab {
+  border-bottom: 3px solid #52BBF9;
+  padding-bottom: 10px;
+}
+
+.tab:hover {
+  border-bottom: 3px solid #52BBF9;
+  padding-bottom: 10px;
+}
+
+.carousel-cell {
+  width: 28%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+.carousel-cell.is-selected {
+  background: #ED2;
+}
+
+/* cell number */
+/* .carousel-island .carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+} */
+
+.carousel-island {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.flickity-page-dots .dot{
+  background-color: #fff;
+}
+
+.carousel-splash.is-fullscreen .carousel-cell {
+  height: 100%;
+}
+
+.carousel-splash .carousel-cell-image {
+  display: block;
+  max-height: 100%;
+}
+
+.intro-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: width: 100vw; */
+  height: 100%; /* relative to nearest positioned ancestor and not nearest block-level ancestor - alternatively: height: 100vh; */ 
+  object-fit: cover;
+  z-index:-1;
+  /* filter: brightness(50%); */ /* 0% black, 100% original image, values > 100% are allowed for brighter than original image. */
+  /* display: none; */
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+.filters-title {
+  margin-top: 40px;
+}
+
+.gallery {
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.resort-description-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resort-description-list li {
+  margin-bottom: 5px;
+}
+
+.resort-images {
+  display: none;
+}
+
+.resort-images.active {
+  display: block;
+}
+
+.flex-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.carousel-cell .island-name {
+  font-family: Open Sans, sans-serif;
+  font-size: 24px;
+  color: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.carousel-island .carousel-cell img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.carousel-island .carousel-cell {
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #000;
 }

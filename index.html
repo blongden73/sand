@@ -18,13 +18,18 @@
   <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
 <body>
-  <section class="hero"><img src="images/hero.jpg" loading="lazy" sizes="100vw" srcset="images/hero-p-500.jpg 500w, images/hero-p-800.jpg 800w, images/hero-p-1080.jpg 1080w, images/hero-p-1600.jpg 1600w, images/hero.jpg 1803w" alt="" class="image">
+  <section class="hero">
+    <div class="intro-slideshow">
+      <img src="/images/splash/2.jpg">
+      <img src="/images/splash/3.jpg">
+      <img src="/images/hero.jpg">
+    </div>
     <div class="header">
       <div class="header-third"></div>
       <div class="header-third"><img src="images/sandals-logo.png" loading="lazy" alt=""></div>
       <div class="header-third align-right">
         <div class="button">
-          <a href="https://www.sandals.co.uk/" class="button-wrapper">Explore Your Options</a>
+          <a href="https://www.sandals.co.uk/" class="button-wrapper">Book Now</a>
         </div>
       </div>
     </div>
@@ -83,20 +88,44 @@
       <div class="right-resort-details flex">
         <div class="controls"></div>
         <div class="tabs flex">
-          <div class="">Suggested</div>
-          <div class="">Map</div>
-          <div class="">Beaches</div>
-          <div class="">Pools</div>
-          <div class="">Dining & Bars</div>
-          <div class="">Watersports</div>
-          <div class="">Island Tours</div>
+          <div data-id="suggested" class="tab suggested-tab active-tab">Suggested</div>
+          <div data-id="map" class="tab">Map</div>
+          <div data-id="beaches" class="tab">Beaches</div>
+          <div data-id="pools" class="tab">Pools</div>
+          <div data-id="dining" class="tab">Dining & Bars</div>
+          <div data-id="watersports" class="tab">Watersports</div>
+          <div data-id="island" class="tab">Island Tours</div>
         </div>
-        <div class="resort-images suggested">
+        <div class="resort-images suggested active">
           <img src="images/resort-testing/sandals.jpg">
           <img src="images/resort-testing/sandals2.jpg">
           <img src="images/resort-testing/sandlas3.jpg">
           <img src="images/resort-testing/sandlas4.jpg">
           <img src="images/resort-testing/Rectangle 41.jpg">
+          <img src="images/resort-testing/Rectangle 42.jpg">
+        </div>
+        <div class="resort-images map">
+          <img src="/images/sandals_placeholder.jpg">
+          <img src="images/resort-testing/sandals.jpg">
+        </div>
+        <div class="resort-images beaches">
+          <img src="/images/sandals_placeholder.jpg">
+          <img src="images/resort-testing/sandals2.jpg">
+        </div>
+        <div class="resort-images pools">
+          <img src="/images/sandals_placeholder.jpg">
+          <img src="images/resort-testing/sandlas3.jpg">
+        </div>
+        <div class="resort-images dining">
+          <img src="/images/sandals_placeholder.jpg">
+          <img src="images/resort-testing/sandlas4.jpg">
+        </div>
+        <div class="resort-images watersports">
+          <img src="/images/sandals_placeholder.jpg">
+          <img src="images/resort-testing/Rectangle 41.jpg">
+        </div>
+        <div class="resort-images island">
+          <img src="/images/sandals_placeholder.jpg">
           <img src="images/resort-testing/Rectangle 42.jpg">
         </div>
       </div>
@@ -152,22 +181,28 @@
       <div class="right-resort-details flex">
         <div class="controls"></div>
         <div class="tabs flex">
-          <div class="">Suggested</div>
-          <div class="">Map</div>
-          <div class="">Beaches</div>
-          <div class="">Pools</div>
-          <div class="">Dining & Bars</div>
-          <div class="">Watersports</div>
-          <div class="">Island Tours</div>
+          <div data-id="suggested" class="tab suggested-tab active-tab">Suggested</div>
+          <div data-id="map" class="tab">Map</div>
+          <div data-id="beaches" class="tab">Beaches</div>
+          <div data-id="pools" class="tab">Pools</div>
+          <div data-id="dining" class="tab">Dining & Bars</div>
+          <div data-id="watersports" class="tab">Watersports</div>
+          <div data-id="island" class="tab">Island Tours</div>
         </div>
-        <div class="resort-images suggested">
-          <img src="images/resort-testing/Rectangle 37.jpg">
-          <img src="images/resort-testing/Rectangle 38.jpg">
-          <img src="images/resort-testing/Rectangle 39.jpg">
-          <img src="images/resort-testing/Rectangle 40.jpg">
+        <div class="resort-images suggested active">
+          <img src="images/resort-testing/sandals.jpg">
+          <img src="images/resort-testing/sandals2.jpg">
+          <img src="images/resort-testing/sandlas3.jpg">
+          <img src="images/resort-testing/sandlas4.jpg">
           <img src="images/resort-testing/Rectangle 41.jpg">
           <img src="images/resort-testing/Rectangle 42.jpg">
         </div>
+        <div class="resort-images map"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images beaches"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images pools"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images dining"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images watersports"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images island"><img src="/images/sandals_placeholder.jpg"></div>
       </div>
     </div>
   </div>
@@ -221,22 +256,28 @@
       <div class="right-resort-details flex">
         <div class="controls"></div>
         <div class="tabs flex">
-          <div class="">Suggested</div>
-          <div class="">Map</div>
-          <div class="">Beaches</div>
-          <div class="">Pools</div>
-          <div class="">Dining & Bars</div>
-          <div class="">Watersports</div>
-          <div class="">Island Tours</div>
+          <div data-id="suggested" class="tab suggested-tab active-tab">Suggested</div>
+          <div data-id="map" class="tab">Map</div>
+          <div data-id="beaches" class="tab">Beaches</div>
+          <div data-id="pools" class="tab">Pools</div>
+          <div data-id="dining" class="tab">Dining & Bars</div>
+          <div data-id="watersports" class="tab">Watersports</div>
+          <div data-id="island" class="tab">Island Tours</div>
         </div>
-        <div class="resort-images suggested">
-          <img src="images/resort-testing/Rectangle 37.jpg">
-          <img src="images/resort-testing/Rectangle 38.jpg">
-          <img src="images/resort-testing/Rectangle 39.jpg">
-          <img src="images/resort-testing/Rectangle 40.jpg">
+        <div class="resort-images suggested active">
+          <img src="images/resort-testing/sandals.jpg">
+          <img src="images/resort-testing/sandals2.jpg">
+          <img src="images/resort-testing/sandlas3.jpg">
+          <img src="images/resort-testing/sandlas4.jpg">
           <img src="images/resort-testing/Rectangle 41.jpg">
           <img src="images/resort-testing/Rectangle 42.jpg">
         </div>
+        <div class="resort-images map"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images beaches"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images pools"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images dining"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images watersports"><img src="/images/sandals_placeholder.jpg"></div>
+        <div class="resort-images island"><img src="/images/sandals_placeholder.jpg"></div>
       </div>
     </div>
   </div>
@@ -259,9 +300,17 @@
         <div class="filters-title-wrapper">
           <h1 class="heading-2">Build Your IDEAL VACATION</h1>
           <h4 class="heading-3">select up to 2 options per category</h4>
+          <div class="tag-breadcrumb">
+
+          </div>
         </div>
-        <div class="update-results-button">
-          update results
+        <div class="flex-buttons">
+          <div class="update-results-button">
+            update results
+          </div>
+          <div class="reset-filters-button">
+            reset filters
+          </div>
         </div>
       </div>
       <div class="tag-wrapper">
@@ -393,21 +442,19 @@
       <div class="filters-title">
         <h1 class="heading-2">CHOOSE YOUR ISLAND</h1>
       </div>
-      <div data-delay="4000" data-animation="slide" class="w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
-        <div class="w-slider-mask">
-          <div class="slide w-slide"><img src="images/Rectangle-18.jpg" loading="lazy" alt="" class="image-3"></div>
-          <div class="slide w-slide"><img src="images/Rectangle-17.jpg" loading="lazy" alt="" class="image-4"></div>
-          <div class="slide w-slide"><img src="images/Rectangle-15.jpg" loading="lazy" alt="" class="image-5"></div>
-          <div class="slide w-slide"><img src="images/Rectangle-36.jpg" loading="lazy" alt="" class="image-6"></div>
-        </div>
-        <div class="w-slider-arrow-left">
-          <div class="w-icon-slider-left"></div>
-        </div>
-        <div class="w-slider-arrow-right">
-          <div class="w-icon-slider-right"></div>
-        </div>
-        <div class="w-slider-nav w-round w-num"></div>
+      
+      <div class="carousel-island" data-flickity='{ "groupCells": true }'>
+        <div class="carousel-cell"><div class="island-name">Jamaica</div><img src="/images/splash/jamaica.webp"></div>
+        <div class="carousel-cell"><div class="island-name">Antigua</div><img src="/images/splash/antigua.webp"></div>
+        <div class="carousel-cell"><div class="island-name">Saint Lucia</div><img src="/images/splash/saintlucia.webp"></div>
+        <div class="carousel-cell"><div class="island-name">Bahamas</div><img src="/images/splash/bahamas.webp"></div>
+        <div class="carousel-cell"><div class="island-name">Grenada</div><img src="/images/splash/grenada.jpeg"></div>
+        <div class="carousel-cell"><div class="island-name">Barbados</div><img src="/images/splash/barbados.jpg"></div>
+        <div class="carousel-cell"><div class="island-name">Curaçao</div><img src="/images/splash/Curaçao.webp"></div>
+        <div class="carousel-cell"><div class="island-name">Turks & Caicos</div><img src="/images/splash/Turks.webp"></div>
+        <div class="carousel-cell"><div class="island-name">Saint Vincent</div><img src="/images/splash/Vincent.jpg"></div>
       </div>
+
     </div>
   </section>
       </body>
