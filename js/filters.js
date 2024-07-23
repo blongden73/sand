@@ -1,3 +1,10 @@
+function trim(s) { 
+    s = s.replace(/(^\s*)|(\s*$)/gi,"");
+    s = s.replace(/[ ]{2,}/gi," "); 
+    s = s.replace(/\n /,"\n"); 
+    return s;
+}
+
 var flkty = new Flickity('.js-flickity', {
     draggable: false
 });
@@ -30,20 +37,55 @@ function nextImage() {
 var gallery = document.querySelector('.gallery');
 var map = document.querySelector('.map');
 var tags = document.querySelectorAll('.tag');
-var resorts = document.querySelectorAll('.resort-selector');
 var updateButton = document.querySelector('.update-results-button');
 var selection = [];
+var resorts;
 var tabs = document.querySelectorAll('.tab');
 var resortImages = document.querySelectorAll('.resort-images');
 var flikbuttonIcon = document.querySelectorAll('.gallery .flickity-prev-next-button')
 var suggestedImages = document.querySelectorAll('.resort-images.suggested');
 var suggestedTab = document.querySelectorAll('.tab.suggested-tab');
 var resetFilters = document.querySelector('.reset-filters-button');
+var resortlisting = document.querySelectorAll('.resorts-list .gallery-cell')
+var islands = document.querySelectorAll('.island-picker');
 
-console.log(suggestedImages);
+for(i=0; i < islands.length; i++) {
+    islands[i].addEventListener('click', function(){
+        console.log('islands')
+        for(j=0; j < resortlisting.length; j++) {
+            var resortsData = resortlisting[j].dataset.island;
+            resortlisting[j].classList.remove('selected');
+            if(resortsData == this.dataset.island) {
+                console.log('found resort island', j);
+                    resortlisting[j].classList.add('selected');
+                    console.log(resortlisting[j]);
+                    flkty.insert( resortlisting[j]);
+                    flkty.reloadCells();
+                    
+                    setTimeout(() => {
+                        flkty.resize();
+                        console.log("resized");
+                      }, "500");
+
+                    gallery.classList.add('active');
+                    map.classList.add('hide');
+                    gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+                    flkty.resize();
+            }
+        }
+    });
+}
+
+console.log(resortlisting, 'listing');
 
 resetFilters.addEventListener('click', function(){
     selection = []
+    resorts.forEach((item,index) => {
+        item.remove();
+    })
+    gallery.classList.remove('active');
+    map.classList.remove('hide');
+
     tags.forEach((item,index) => {
         item.classList.remove('selected');
     })
@@ -87,21 +129,35 @@ for(i=0; i < tags.length; i++) {
         if(!this.parentNode.classList.contains('clicked')){
             this.classList.toggle('selected');
             this.parentNode.classList.add('clicked');
-            selection.push(this.innerText.toLowerCase().replace(/\s+/g, '-'))
+            var topush = this.innerText.toLowerCase();
+            var triming = trim(topush);
+            var clean = triming.replace(/\s+/g, '-');
+            selection.push(clean);
             console.log(selection.join());
         }
         updateButton.addEventListener('click', function(){
-            for(j=0; j < resorts.length; j++) {
-                var resortsData = resorts[j].dataset.tags;
-                resorts[j].classList.remove('selected');
+            for(j=0; j < resortlisting.length; j++) {
+                var resortsData = resortlisting[j].dataset.tags;
+                console.log(resortsData);
+                resortlisting[j].classList.remove('selected');
+                resorts = document.querySelectorAll('.flickity-slider .resort-selector');
                 if(resortsData.includes(selection.join())){
                     console.log('found resort', j);
-                    resorts[j].classList.add('selected');
+                    console.log(resortlisting[j]);
+                    resortlisting[j].classList.add('selected');
+                    console.log(resortlisting[j]);
+                    flkty.insert( resortlisting[j]);
+                    flkty.reloadCells();
+                    
+                    setTimeout(() => {
+                        flkty.resize();
+                        console.log("resized");
+                      }, "100");
+
                     gallery.classList.add('active');
                     map.classList.add('hide');
                     gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                     flkty.resize();
-                    flkty.reloadCells();
                 }else {
                     console.log('no resorts found', j);
                 }
