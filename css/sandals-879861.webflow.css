@@ -263,7 +263,7 @@ body {
 
 .ideal-card h3 {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 13px;
   line-height: 1;
   color: #fff;
 }
@@ -441,6 +441,10 @@ body { font-family: sans-serif; }
   margin: 0;
 }
 
+.resort-description h2 {
+  font-size: 26px;
+}
+
 .resort-description-list li {
   margin-bottom: 5px;
 }
@@ -480,4 +484,20 @@ body { font-family: sans-serif; }
   border-radius: 10px;
   overflow: hidden;
   background-color: #000;
+}
+
+.resorts-list {
+  display: none;
+}
+
+.Book-now-button {
+  background-color: #000;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  font-family: Open Sans, sans-serif;
+  margin-top: 10px;
+  font-size: 18px;
+  display: block;
+  text-decoration: none;
 }
