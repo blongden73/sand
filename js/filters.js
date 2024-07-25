@@ -1,3 +1,5 @@
+console.log('v1');
+
 function trim(s) { 
     s = s.replace(/(^\s*)|(\s*$)/gi,"");
     s = s.replace(/[ ]{2,}/gi," "); 
@@ -130,12 +132,16 @@ for(i=0; i < tags.length; i++) {
             this.classList.toggle('selected');
             this.parentNode.classList.add('clicked');
             var topush = this.innerText.toLowerCase();
+            console.log('topush');
             var triming = trim(topush);
+            console.log('pushed');
             var clean = triming.replace(/\s+/g, '-');
             selection.push(clean);
+            console.log('clean');
             console.log(selection.join());
         }
         updateButton.addEventListener('click', function(){
+            console.log('click');
             for(j=0; j < resortlisting.length; j++) {
                 var resortsData = resortlisting[j].dataset.tags;
                 console.log(resortsData);
