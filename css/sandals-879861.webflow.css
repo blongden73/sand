@@ -241,9 +241,21 @@ body {
   
 }
 
+.resort-image {
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+}
+
+.resort-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .resort-images img{
   width: 49.5%;
   margin-bottom: 10px;
+  aspect-ratio: 5/3;
 }
 
 .resort-ideal-for {

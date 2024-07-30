@@ -1,4 +1,32 @@
-console.log('v1');
+console.log('v2');
+
+// function includeHTML() {
+//   var z, i, elmnt, file, xhttp;
+//   /* Loop through a collection of all HTML elements: */
+//   z = document.getElementsByTagName("*");
+//   for (i = 0; i < z.length; i++) {
+//     elmnt = z[i];
+//     /*search for elements with a certain atrribute:*/
+//     file = elmnt.getAttribute("w3-include-html");
+//     if (file) {
+//       /* Make an HTTP request using the attribute value as the file name: */
+//       xhttp = new XMLHttpRequest();
+//       xhttp.onreadystatechange = function() {
+//         if (this.readyState == 4) {
+//           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+//           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+//           /* Remove the attribute, and call this function once more: */
+//           elmnt.removeAttribute("w3-include-html");
+//           includeHTML();
+//         }
+//       }
+//       xhttp.open("GET", file, true);
+//       xhttp.send();
+//       /* Exit the function: */
+//       return;
+//     }
+//   }
+// }
 
 function trim(s) { 
     s = s.replace(/(^\s*)|(\s*$)/gi,"");
@@ -55,9 +83,10 @@ for(i=0; i < islands.length; i++) {
     islands[i].addEventListener('click', function(){
         console.log('islands')
         for(j=0; j < resortlisting.length; j++) {
-            var resortsData = resortlisting[j].dataset.island;
+            var resortsData = resortlisting[j].dataset.island.toLowerCase();
+            console.log(resortsData,this.dataset.island.toLowerCase(), 'island')
             resortlisting[j].classList.remove('selected');
-            if(resortsData == this.dataset.island) {
+            if(resortsData == this.dataset.island.toLowerCase()) {
                 console.log('found resort island', j);
                     resortlisting[j].classList.add('selected');
                     console.log(resortlisting[j]);
@@ -128,9 +157,9 @@ for(i=0; i < tags.length; i++) {
         // for(g=0; g < resorts.length; g++) {
         // var resortsData = resorts[g].dataset.tags;
         // }
-        if(!this.parentNode.classList.contains('clicked')){
-            this.classList.toggle('selected');
-            this.parentNode.classList.add('clicked');
+        this.classList.toggle('selected');
+        console.log(this.innerText.toLowerCase());
+        if(!this.parentNode.classList.contains('clicked') && this.innerText.toLowerCase() == 'adults only' || !this.parentNode.classList.contains('clicked') && this.innerText.toLowerCase() == 'families with kids' ){
             var topush = this.innerText.toLowerCase();
             console.log('topush');
             var triming = trim(topush);
@@ -139,14 +168,18 @@ for(i=0; i < tags.length; i++) {
             selection.push(clean);
             console.log('clean');
             console.log(selection.join());
+            this.parentNode.classList.add('clicked');
         }
         updateButton.addEventListener('click', function(){
             console.log('click');
+            console.log(resortlisting);
+
             for(j=0; j < resortlisting.length; j++) {
                 var resortsData = resortlisting[j].dataset.tags;
                 console.log(resortsData);
                 resortlisting[j].classList.remove('selected');
                 resorts = document.querySelectorAll('.flickity-slider .resort-selector');
+                console.log(resortsData, '|||', selection.join(), 'this is important');
                 if(resortsData.includes(selection.join())){
                     console.log('found resort', j);
                     console.log(resortlisting[j]);
