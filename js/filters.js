@@ -96,11 +96,11 @@ for(i=0; i < islands.length; i++) {
                     setTimeout(() => {
                         flkty.resize();
                         console.log("resized");
+                        gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                       }, "500");
 
                     gallery.classList.add('active');
                     map.classList.add('hide');
-                    gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                     flkty.resize();
             }
         }
@@ -193,9 +193,12 @@ for(i=0; i < tags.length; i++) {
                         console.log("resized");
                       }, "100");
 
+                      setTimeout(() => {
+                        gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
+                      }, "500"); 
+
                     gallery.classList.add('active');
                     map.classList.add('hide');
-                    gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
                     flkty.resize();
                 }else {
                     console.log('no resorts found', j);
