@@ -207,3 +207,12 @@ for(i=0; i < tags.length; i++) {
         });
     });
 }
+
+setTimeout(() => {
+    var description = document.querySelectorAll('.resort-description-list');
+    for(i=0; i<description.length; i++) {
+        var html = description[i].innerText.replace(/[^\r\n]+/g, '<li>$&</li>');
+        console.log(html);
+        description[i].innerHTML = html;
+    }
+}, "500");

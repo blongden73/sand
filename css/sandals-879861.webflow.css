@@ -452,9 +452,9 @@ body { font-family: sans-serif; }
 }
 
 .resort-description-list {
-  list-style: none;
   padding: 0;
   margin: 0;
+  padding-left: 20px;
 }
 
 .resort-description h2 {
