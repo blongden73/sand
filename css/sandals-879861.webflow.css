@@ -378,6 +378,10 @@ body { font-family: sans-serif; }
   padding-bottom: 10px;
 }
 
+.tab {
+  font-size: 1.2vw;
+}
+
 .tab:hover {
   border-bottom: 3px solid #52BBF9;
   padding-bottom: 10px;
