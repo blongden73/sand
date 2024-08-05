@@ -46,7 +46,7 @@ var flktyIsland = new Flickity('.carousel-island', {
 
 const slideshowImages = document.querySelectorAll(".intro-slideshow img");
 
-const nextImageDelay = 2000;
+const nextImageDelay = 3000;
 let currentImageCounter = 0; // setting a variable to keep track of the current image (slide)
 
 // slideshowImages[currentImageCounter].style.display = "block";
@@ -69,6 +69,13 @@ var map = document.querySelector('.map');
 var tags = document.querySelectorAll('.tag');
 var updateButton = document.querySelector('.update-results-button');
 var selection = [];
+var clicks = 0;
+var tagOne;
+var tagTwo;
+var tagThree;
+var tagFour;
+var tagFive;
+var tagSix;
 var resorts;
 var tabs = document.querySelectorAll('.tab');
 var resortImages = document.querySelectorAll('.resort-images');
@@ -157,18 +164,71 @@ for(i=0; i < tags.length; i++) {
         // for(g=0; g < resorts.length; g++) {
         // var resortsData = resorts[g].dataset.tags;
         // }
-        this.classList.toggle('selected');
         console.log(this.innerText.toLowerCase());
-        if(!this.parentNode.classList.contains('clicked') && this.innerText.toLowerCase() == 'adults only' || !this.parentNode.classList.contains('clicked') && this.innerText.toLowerCase() == 'families with kids' ){
-            var topush = this.innerText.toLowerCase();
-            console.log('topush');
-            var triming = trim(topush);
-            console.log('pushed');
-            var clean = triming.replace(/\s+/g, '-');
-            selection.push(clean);
-            console.log('clean');
-            console.log(selection.join());
-            this.parentNode.classList.add('clicked');
+        if(!this.parentNode.classList.contains('clicked')){
+            // this.classList.toggle('selected');
+            // var topush = this.innerText.toLowerCase();
+            // console.log('topush');
+            // var triming = trim(topush);
+            // console.log('pushed');
+            // var clean = triming.replace(/\s+/g, '-');
+            // selection.push(clean);
+            // console.log('clean');
+            // console.log(selection.join());
+            // this.parentNode.classList.add('clicked');
+
+            console.log('CLIcKS', clicks)
+
+            if(clicks === 0) {
+                this.classList.toggle('selected');
+                var topush = this.innerText.toLowerCase();
+                var triming = trim(topush);
+                var clean = triming.replace(/\s+/g, '-');
+                tagOne = clean;
+                console.log('what');
+                console.log('tagone: ', tagOne, clicks);
+            }
+            if(clicks === 1) {
+                this.classList.toggle('selected');
+                var topush = this.innerText.toLowerCase();
+                var triming = trim(topush);
+                var clean = triming.replace(/\s+/g, '-');
+                tagTwo = clean;
+                console.log('tagtwo: ', tagTwo, clicks);
+            }
+            if(clicks === 2) {
+                this.classList.toggle('selected');
+                var topush = this.innerText.toLowerCase();
+                var triming = trim(topush);
+                var clean = triming.replace(/\s+/g, '-');
+                tagThree = clean;
+                console.log('tagthree: ', tagThree, clicks);
+            }
+            if(clicks === 3) {
+                this.classList.toggle('selected');
+                var topush = this.innerText.toLowerCase();
+                var triming = trim(topush);
+                var clean = triming.replace(/\s+/g, '-');
+                tagFour = clean;
+                console.log('tagfour: ', tagFour, clicks);
+            }
+            if(clicks === 4) {
+                this.classList.toggle('selected');
+                var topush = this.innerText.toLowerCase();
+                var triming = trim(topush);
+                var clean = triming.replace(/\s+/g, '-');
+                tagFive = clean;
+                console.log('tagfive: ', tagFive, clicks);
+            }
+            if(clicks === 5) {
+                this.classList.toggle('selected');
+                var topush = this.innerText.toLowerCase();
+                var triming = trim(topush);
+                var clean = triming.replace(/\s+/g, '-');
+                tagSix = clean;
+                console.log('tagsix: ', tagSix, clicks);
+            }
+            clicks++;
         }
         updateButton.addEventListener('click', function(){
             console.log('click');
@@ -180,7 +240,10 @@ for(i=0; i < tags.length; i++) {
                 resortlisting[j].classList.remove('selected');
                 resorts = document.querySelectorAll('.flickity-slider .resort-selector');
                 console.log(resortsData, '|||', selection.join(), 'this is important');
-                if(resortsData.includes(selection.join())){
+
+                console.log('latest version')
+
+                if(resortsData.includes(tagOne) && resortsData.includes(tagTwo) && resortsData.includes(tagThree)){
                     console.log('found resort', j);
                     console.log(resortlisting[j]);
                     resortlisting[j].classList.add('selected');
