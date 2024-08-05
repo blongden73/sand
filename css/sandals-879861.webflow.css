@@ -89,6 +89,7 @@ body {
 .filters {
   background-color: #214f73;
   padding: 22px;
+  padding-bottom: 100px;
 }
 
 .filters-title {
@@ -96,6 +97,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  position: sticky;
+  top: 0;
+  background-color: #214f73;
 }
 
 .update-results-button, .reset-filters-button {
