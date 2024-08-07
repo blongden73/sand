@@ -161,9 +161,14 @@ body {
   cursor: pointer;
 }
 
+.tag-text {
+  cursor: pointer;
+}
+
 .tag:hover {
   color: #214f73;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .tag:hover .heading-3{
@@ -176,6 +181,7 @@ body {
   font-size: 80px;
   font-weight: 300;
   line-height: 80px;
+  cursor: pointer;
 }
 
 .text-span-2 {
