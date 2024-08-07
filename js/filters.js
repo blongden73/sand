@@ -117,6 +117,8 @@ for(i=0; i < islands.length; i++) {
 console.log(resortlisting, 'listing');
 
 resetFilters.addEventListener('click', function(){
+    resorts = document.querySelectorAll('.flickity-slider .resort-selector');
+    console.log('clicked reset');
     clicks = 0;
     tagOne = '';
     tagTwo = '';
