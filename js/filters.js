@@ -165,7 +165,7 @@ for(i=0; i < tags.length; i++) {
         // var resortsData = resorts[g].dataset.tags;
         // }
         console.log(this.innerText.toLowerCase());
-        if(!this.parentNode.classList.contains('clicked') && clicks <= 3 ){
+        if(!this.parentNode.classList.contains('clicked') && clicks <= 10 ){
             // this.classList.toggle('selected');
             // var topush = this.innerText.toLowerCase();
             // console.log('topush');
@@ -259,6 +259,11 @@ for(i=0; i < tags.length; i++) {
                       setTimeout(() => {
                         gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
                       }, "500"); 
+
+                      setTimeout(() => {
+                        flkty.resize();
+                        console.log("resized");
+                      }, "1000");
 
                     gallery.classList.add('active');
                     map.classList.add('hide');
