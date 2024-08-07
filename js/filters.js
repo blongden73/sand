@@ -117,7 +117,13 @@ for(i=0; i < islands.length; i++) {
 console.log(resortlisting, 'listing');
 
 resetFilters.addEventListener('click', function(){
-    selection = []
+    var clicks = 0;
+    var tagOne = '';
+    var tagTwo = '';
+    var tagThree = '';
+    var tagFour = '';
+    var tagFive = '';
+    var tagSix = '';
     resorts.forEach((item,index) => {
         item.remove();
     })
