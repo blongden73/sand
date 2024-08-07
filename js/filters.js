@@ -165,7 +165,7 @@ for(i=0; i < tags.length; i++) {
         // var resortsData = resorts[g].dataset.tags;
         // }
         console.log(this.innerText.toLowerCase());
-        if(!this.parentNode.classList.contains('clicked')){
+        if(!this.parentNode.classList.contains('clicked') && clicks <= 3 ){
             // this.classList.toggle('selected');
             // var topush = this.innerText.toLowerCase();
             // console.log('topush');
@@ -244,7 +244,7 @@ for(i=0; i < tags.length; i++) {
                 console.log('latest version')
 
                 if(resortsData.includes(tagOne) && resortsData.includes(tagTwo) && resortsData.includes(tagThree)){
-                    console.log('found resort', j);
+                    console.log('found resort 3 tag');
                     console.log(resortlisting[j]);
                     resortlisting[j].classList.add('selected');
                     console.log(resortlisting[j]);
@@ -263,11 +263,32 @@ for(i=0; i < tags.length; i++) {
                     gallery.classList.add('active');
                     map.classList.add('hide');
                     flkty.resize();
-                }else {
-                    console.log('no resorts found', j);
+                } else if(resortsData.includes(tagOne) && !resortsData.includes(tagTwo) && !resortsData.includes(tagThree)){
+                    console.log('1 match');
+                    console.log(resortlisting[j]);
+                    resortlisting[j].classList.add('selected');
+                    console.log(resortlisting[j]);
+                    flkty.insert( resortlisting[j]);
+                    flkty.reloadCells();
+                    
+                    setTimeout(() => {
+                        flkty.resize();
+                        console.log("resized");
+                      }, "100");
+
+                      setTimeout(() => {
+                        gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
+                      }, "500"); 
+
+                    gallery.classList.add('active');
+                    map.classList.add('hide');
+                    flkty.resize();
+                } else {
+                    console.log('no exact match');
                 }
             }
         });
+
     });
 }
 
