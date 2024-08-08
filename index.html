@@ -49,7 +49,7 @@
     <div class="Sandals-Saint-Montego flex resort-wrapper">
       <div class="left-resort-details">
         <div class="resort-image">
-          <img src="{{Images}}">
+          <img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Carousel_ResortHero_Slider/{{#underscore}}{{ResortTitle}}{{/underscore}}_Carousel_ResortHero_Slider_1.jpg">
         </div>
         <div class="resort-description">
           <h2>{{ResortTitle}}</h2>
@@ -93,30 +93,36 @@
           <div data-id="island" class="tab">Island Tours</div>
         </div>
         <div class="resort-images suggested active">
-          <img src="{{Images}}">
-          {{#if Beaches}}<img src="{{Beaches}}">{{/if}}
-          {{#if Pool}}<img src="{{Pool}}">{{/if}}
-          {{#if Dining}}<img src="{{Dining}}">{{/if}}
-          {{#if watersports}}<img src="{{watersports}}">{{/if}}
-          {{#if IslandTours}}<img src="{{IslandTours}}">{{/if}}
+          <img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Carousel_ResortHero_Slider/{{#underscore}}{{ResortTitle}}{{/underscore}}_Carousel_ResortHero_Slider_1.jpg">
+          <img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Beaches/{{#underscore}}{{ResortTitle}}{{/underscore}}_Beaches_1.jpg">
+          <img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Pools/{{#underscore}}{{ResortTitle}}{{/underscore}}_Pools_1.jpg">
+          <img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Dining-Bars/{{#underscore}}{{ResortTitle}}{{/underscore}}_Dining-Bars_1.jpg">
+          <img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Watersports/{{#underscore}}{{ResortTitle}}{{/underscore}}_Watersports_1.jpg">
+          <img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Tours/{{#underscore}}{{ResortTitle}}{{/underscore}}_Tours.jpg">
         </div>
         <div class="resort-images map">
           <img src="{{Images}}">
         </div>
         <div class="resort-images beaches">
-          {{#if Beaches}}<img src="{{Beaches}}">{{/if}}
+          {{#if Beaches}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Beaches/{{#underscore}}{{ResortTitle}}{{/underscore}}_Beaches_1.jpg">{{/if}}
+          {{#if Beaches}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Beaches/{{#underscore}}{{ResortTitle}}{{/underscore}}_Beaches_2.jpg">{{/if}}
+          {{#if Beaches}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Beaches/{{#underscore}}{{ResortTitle}}{{/underscore}}_Beaches_3.jpg">{{/if}}
+          {{#if Beaches}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Beaches/{{#underscore}}{{ResortTitle}}{{/underscore}}_Beaches_4.jpg">{{/if}}
         </div>
         <div class="resort-images pools">
-          {{#if Pool}}<img src="{{Pool}}">{{/if}}
+          {{#if Pool}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Pools/{{#underscore}}{{ResortTitle}}{{/underscore}}_Pools_1.jpg">{{/if}}
+          {{#if Pool}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Pools/{{#underscore}}{{ResortTitle}}{{/underscore}}_Pools_2.jpg">{{/if}}
+          {{#if Pool}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Pools/{{#underscore}}{{ResortTitle}}{{/underscore}}_Pools_3.jpg">{{/if}}
+          {{#if Pool}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Pools/{{#underscore}}{{ResortTitle}}{{/underscore}}_Pools_4.jpg">{{/if}}
         </div>
         <div class="resort-images dining">
-          {{#if Dining}}<img src="{{Dining}}">{{/if}}
+          {{#if Dining}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Dining-Bars/{{#underscore}}{{ResortTitle}}{{/underscore}}_Dining-Bars_1.jpg">{{/if}}
         </div>
         <div class="resort-images watersports">
-          {{#if watersports}}<img src="{{watersports}}">{{/if}}
+          {{#if watersports}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Watersports/{{#underscore}}{{ResortTitle}}{{/underscore}}_Watersports_1.jpg">{{/if}}
         </div>
         <div class="resort-images island">
-          {{#if IslandTours}}<img src="{{IslandTours}}">{{/if}}
+          {{#if IslandTours}}<img src="/Sandals_Images/{{#underscore}}{{ResortTitle}}{{/underscore}}/Tours/{{#underscore}}{{ResortTitle}}{{/underscore}}_Tours.jpg">{{/if}}
         </div>
       </div>
     </div>
@@ -293,6 +299,16 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   <script>
+    Handlebars.registerHelper('dashes', function(options) {
+      var string = options.fn(this);
+      return string.replace( / /g, '-' );
+    });
+
+    Handlebars.registerHelper('underscore', function(options) {
+      var string = options.fn(this);
+      return string.replace( / /g, '_' );
+    });
+
     var source = document.getElementById("entry-template").innerHTML;
     var template = Handlebars.compile(source);
     var context = 

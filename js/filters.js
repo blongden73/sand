@@ -70,6 +70,7 @@ var tags = document.querySelectorAll('.tag');
 var updateButton = document.querySelector('.update-results-button');
 var selection = [];
 var clicks = 0;
+var limit = 0;
 var tagOne;
 var tagTwo;
 var tagThree;
@@ -85,6 +86,7 @@ var suggestedTab = document.querySelectorAll('.tab.suggested-tab');
 var resetFilters = document.querySelector('.reset-filters-button');
 var resortlisting = document.querySelectorAll('.resorts-list .gallery-cell')
 var islands = document.querySelectorAll('.island-picker');
+var hero = document.querySelector('.hero');
 
 for(i=0; i < islands.length; i++) {
     islands[i].addEventListener('click', function(){
@@ -103,8 +105,8 @@ for(i=0; i < islands.length; i++) {
                     setTimeout(() => {
                         flkty.resize();
                         console.log("resized");
-                        gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-                      }, "500");
+                        gallery.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                      }, "1000");
 
                     gallery.classList.add('active');
                     map.classList.add('hide');
@@ -120,6 +122,7 @@ resetFilters.addEventListener('click', function(){
     resorts = document.querySelectorAll('.flickity-slider .resort-selector');
     console.log('clicked reset');
     clicks = 0;
+    limit = 0;
     tagOne = '';
     tagTwo = '';
     tagThree = '';
@@ -266,8 +269,8 @@ for(i=0; i < tags.length; i++) {
                         }, "100");
 
                         setTimeout(() => {
-                            gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
-                        }, "500"); 
+                            gallery.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }); 
+                        }, "1000"); 
 
                         setTimeout(() => {
                             flkty.resize();
@@ -297,12 +300,12 @@ for(i=0; i < tags.length; i++) {
                             }, "1000");
 
                             setTimeout(() => {
-                                gallery.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }); 
-                            }, "500"); 
+                                gallery.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }); 
+                            }, "1000"); 
 
                             gallery.classList.add('active');
                             map.classList.add('hide');
-                            flkty.resize();   
+                            flkty.resize();
                 } else {
                     console.log('no exact match');
                 }
