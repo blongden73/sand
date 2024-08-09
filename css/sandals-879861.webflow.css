@@ -348,7 +348,7 @@ body { font-family: sans-serif; }
 }
 
 .gallery-cell {
-  width: 65%;
+  width: 85%;
   height: auto;
   margin-right: 10px;
   counter-increment: gallery-cell;
