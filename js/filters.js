@@ -41,7 +41,9 @@ var flkty = new Flickity('.js-flickity', {
 
 var flktyIsland = new Flickity('.carousel-island', {
     draggable: false,
-    cellAlign: 'left'
+    cellAlign: 'left',
+    wrapAround: true,
+    pageDots: false
 });
 
 const slideshowImages = document.querySelectorAll(".intro-slideshow img");
