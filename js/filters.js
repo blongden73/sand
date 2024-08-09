@@ -184,7 +184,7 @@ for(i=0; i < tags.length; i++) {
         // var resortsData = resorts[g].dataset.tags;
         // }
         console.log(this.innerText.toLowerCase());
-        if(!this.parentNode.classList.contains('clicked') && clicks <= 10 ){
+        if(!this.parentNode.classList.contains('clicked') && clicks <= 1 ){
             // this.classList.toggle('selected');
             // var topush = this.innerText.toLowerCase();
             // console.log('topush');
@@ -262,7 +262,7 @@ for(i=0; i < tags.length; i++) {
 
                 console.log('latest version')
 
-                if(resortsData.includes(tagOne) && resortsData.includes(tagTwo) && resortsData.includes(tagThree)){
+                if(resortsData.includes(tagOne) && resortsData.includes(tagTwo)){
                         console.log('found resort 3 tag');
                         console.log(resortlisting[j]);
                         resortlisting[j].classList.add('selected');
