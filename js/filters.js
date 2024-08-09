@@ -109,6 +109,11 @@ for(i=0; i < islands.length; i++) {
                         console.log("resized");
                         gallery.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
                       }, "1000");
+                    
+                    setTimeout(() => {
+                        flkty.resize();
+                        console.log("resized");
+                    }, "2000");
 
                     gallery.classList.add('active');
                     map.classList.add('hide');
