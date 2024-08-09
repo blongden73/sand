@@ -94,7 +94,7 @@ for(i=0; i < islands.length; i++) {
     islands[i].addEventListener('click', function(){
         console.log('islands')
         for(j=0; j < resortlisting.length; j++) {
-            var resortsData = resortlisting[j].dataset.island.toLowerCase();
+            var resortsData = resortlisting[j].dataset.island.toLowerCase().replace(/\s+/g, '-');
             console.log(resortsData,this.dataset.island.toLowerCase(), 'island')
             resortlisting[j].classList.remove('selected');
             if(resortsData == this.dataset.island.toLowerCase()) {
