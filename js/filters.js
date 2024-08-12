@@ -89,6 +89,7 @@ var resetFilters = document.querySelector('.reset-filters-button');
 var resortlisting = document.querySelectorAll('.resorts-list .gallery-cell')
 var islands = document.querySelectorAll('.island-picker');
 var hero = document.querySelector('.hero');
+var noresults = document.querySelector('.no-results');
 
 for(i=0; i < islands.length; i++) {
     islands[i].addEventListener('click', function(){
@@ -142,6 +143,7 @@ resetFilters.addEventListener('click', function(){
     })
     gallery.classList.remove('active');
     map.classList.remove('hide');
+    noresults.classList.remove('active');
 
     tags.forEach((item,index) => {
         item.classList.remove('selected');
@@ -250,18 +252,10 @@ for(i=0; i < tags.length; i++) {
             clicks++;
         }
         updateButton.addEventListener('click', function(){
-            console.log('click');
-            console.log(resortlisting);
-
             for(j=0; j < resortlisting.length; j++) {
                 var resortsData = resortlisting[j].dataset.tags;
-                console.log(resortsData);
                 resortlisting[j].classList.remove('selected');
                 resorts = document.querySelectorAll('.flickity-slider .resort-selector');
-                console.log(resortsData, '|||', selection.join(), 'this is important');
-
-                console.log('latest version')
-
                 if(resortsData.includes(tagOne) && resortsData.includes(tagTwo)){
                         console.log('found resort 3 tag');
                         console.log(resortlisting[j]);
@@ -287,34 +281,39 @@ for(i=0; i < tags.length; i++) {
                         gallery.classList.add('active');
                         map.classList.add('hide');
                         flkty.resize();
+                        noresults.classList.remove('active');
+                        break;
                     }   
                 else if(resortsData.includes(tagOne) && !resortsData.includes(tagTwo) && !resortsData.includes(tagThree)){
-                            console.log('1 match');
-                            console.log(resortlisting[j]);
-                            resortlisting[j].classList.add('selected');
-                            console.log(resortlisting[j]);
-                            flkty.insert( resortlisting[j]);
-                            flkty.reloadCells();
-                            
-                            setTimeout(() => {
-                                flkty.resize();
-                                console.log("resized");
-                            }, "100");
-
-                            setTimeout(() => {
-                                flkty.resize();
-                                console.log("resized");
-                            }, "1000");
-
-                            setTimeout(() => {
-                                gallery.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }); 
-                            }, "1000"); 
-
-                            gallery.classList.add('active');
-                            map.classList.add('hide');
+                        console.log('1 match');
+                        console.log(resortlisting[j]);
+                        resortlisting[j].classList.add('selected');
+                        console.log(resortlisting[j]);
+                        flkty.insert( resortlisting[j]);
+                        flkty.reloadCells();
+                        
+                        setTimeout(() => {
                             flkty.resize();
+                            console.log("resized");
+                        }, "100");
+
+                        setTimeout(() => {
+                            flkty.resize();
+                            console.log("resized");
+                        }, "1000");
+
+                        setTimeout(() => {
+                            gallery.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }); 
+                        }, "1000"); 
+
+                        gallery.classList.add('active');
+                        map.classList.add('hide');
+                        flkty.resize();
+                        break;
                 } else {
-                    console.log('no exact match');
+                    console.log('no resorts');
+                    noresults.classList.add('active');
+                    noresults.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }); 
                 }
             }
         });

@@ -542,3 +542,27 @@ body { font-family: sans-serif; }
   display: block;
   text-decoration: none;
 }
+
+.no-results {
+  display: none;
+  height: 50vh;
+}
+
+.no-results.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-results {
+  background-color:#214f73;
+  font-family: Open Sans, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.no-results h2 {
+  font-family: Open Sans, sans-serif;
+  margin: 0;
+  font-weight: 100;
+}
