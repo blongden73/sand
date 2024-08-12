@@ -581,3 +581,7 @@ body { font-family: sans-serif; }
 .refine:hover {
   opacity: 0.8;
 }
+
+.gallery.active + .no-results {
+  display: none;
+}

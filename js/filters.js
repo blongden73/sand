@@ -316,7 +316,6 @@ for(i=0; i < tags.length; i++) {
                         map.classList.add('hide');
                         flkty.resize();
                         noresults.classList.remove('active');
-                        break;
                     }   
                 else if(resortsData.includes(tagOne) && !resortsData.includes(tagTwo) && !resortsData.includes(tagThree)){
                         console.log('1 match');
