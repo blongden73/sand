@@ -86,6 +86,8 @@ var flikbuttonIcon = document.querySelectorAll('.gallery .flickity-prev-next-but
 var suggestedImages = document.querySelectorAll('.resort-images.suggested');
 var suggestedTab = document.querySelectorAll('.tab.suggested-tab');
 var resetFilters = document.querySelector('.reset-filters-button');
+var refineFilters = document.querySelector('.refine');
+var filtersSection = document.querySelector('.filters');
 var resortlisting = document.querySelectorAll('.resorts-list .gallery-cell')
 var islands = document.querySelectorAll('.island-picker');
 var hero = document.querySelector('.hero');
@@ -125,6 +127,38 @@ for(i=0; i < islands.length; i++) {
 }
 
 console.log(resortlisting, 'listing');
+
+
+refineFilters.addEventListener('click', function(){
+    resorts = document.querySelectorAll('.flickity-slider .resort-selector');
+    console.log('clicked reset');
+    clicks = 0;
+    limit = 0;
+    tagOne = '';
+    tagTwo = '';
+    tagThree = '';
+    tagFour = '';
+    tagFive = '';
+    tagSix = '';
+    console.log(tagOne, 'reset');
+    resorts.forEach((item,index) => {
+        item.remove();
+    })
+    gallery.classList.remove('active');
+    map.classList.remove('hide');
+    noresults.classList.remove('active');
+
+    tags.forEach((item,index) => {
+        item.classList.remove('selected');
+    })
+    var rowWrappers = document.querySelectorAll('.tag-wrapper');
+    rowWrappers.forEach((item,index) => {
+        item.classList.remove('clicked');
+    })
+    console.log(selection, 'selection removed');
+    filtersSection.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }); 
+})
+
 
 resetFilters.addEventListener('click', function(){
     resorts = document.querySelectorAll('.flickity-slider .resort-selector');

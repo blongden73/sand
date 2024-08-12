@@ -43,16 +43,21 @@ body {
   align-items: center;
 }
 
-.button-wrapper {
+.button-wrapper, .Book-now-button{
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
   background-color: #000;
   padding: 8px 12px;
   font-family: Open Sans, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   text-decoration: none;
   display: block;
+  border-radius: 8px;
+}
+
+.button-wrapper:hover, .Book-now-button {
+  background-color: #068faa;
 }
 
 .hero-text {
@@ -131,7 +136,7 @@ body {
 }
 
 .tag-wrapper {
-  border-top: 1px solid #fff;
+  border-top: 1px solid rgba(255, 255, 255, .3);
   align-items: center;
   margin-top: 20px;
   padding-top: 20px;
@@ -565,4 +570,14 @@ body { font-family: sans-serif; }
   font-family: Open Sans, sans-serif;
   margin: 0;
   font-weight: 100;
+}
+
+.refine {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.refine:hover {
+  opacity: 0.8;
 }
