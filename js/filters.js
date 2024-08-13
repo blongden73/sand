@@ -96,6 +96,7 @@ var noresults = document.querySelector('.no-results');
 for(i=0; i < islands.length; i++) {
     islands[i].addEventListener('click', function(){
         console.log('islands')
+        reset();
         for(j=0; j < resortlisting.length; j++) {
             var resortsData = resortlisting[j].dataset.island.toLowerCase().replace(/\s+/g, '-');
             console.log(resortsData,this.dataset.island.toLowerCase(), 'island')
@@ -188,6 +189,36 @@ resetFilters.addEventListener('click', function(){
     })
     console.log(selection, 'selection removed');
 })
+
+function reset(){
+    resorts = document.querySelectorAll('.flickity-slider .resort-selector');
+    console.log('clicked reset');
+    clicks = 0;
+    limit = 0;
+    tagOne = '';
+    tagTwo = '';
+    tagThree = '';
+    tagFour = '';
+    tagFive = '';
+    tagSix = '';
+    console.log(tagOne, 'reset');
+    resorts.forEach((item,index) => {
+        item.remove();
+    })
+    gallery.classList.remove('active');
+    map.classList.remove('hide');
+    noresults.classList.remove('active');
+
+    tags.forEach((item,index) => {
+        item.classList.remove('selected');
+    })
+    var rowWrappers = document.querySelectorAll('.tag-wrapper');
+    rowWrappers.forEach((item,index) => {
+        item.classList.remove('clicked');
+    })
+    console.log(selection, 'selection removed');
+}
+
 
 flikbuttonIcon.forEach((item,index) => {
     item.addEventListener('click', function(){
