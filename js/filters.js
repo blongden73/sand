@@ -217,6 +217,14 @@ function reset(){
         item.classList.remove('clicked');
     })
     console.log(selection, 'selection removed');
+    for(j=0; j<tabs.length; j++){
+        tabs[j].classList.remove('active-tab');
+        resortImages[j].classList.remove('active');
+    }
+    for(k=0; k<suggestedImages.length; k++){
+        suggestedImages[k].classList.add('active');
+        suggestedTab[k].classList.add('active-tab');
+    }
 }
 
 
