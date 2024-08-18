@@ -585,3 +585,7 @@ body { font-family: sans-serif; }
 .gallery.active + .no-results {
   display: none;
 }
+
+.island-name {
+  margin-top: -10px !important;
+}
