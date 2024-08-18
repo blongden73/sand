@@ -409,3 +409,45 @@ setTimeout(() => {
         description[i].innerHTML = html;
     }
 }, "500");
+
+if (window.location.href.indexOf("?") > -1) {
+    var url = window.location.href;
+    var urlSplit = url.split('?');
+    var urlfound = urlSplit[1];
+    console.log(urlfound)
+
+    for(j=0; j < resortlisting.length; j++) {
+        var resortsName = resortlisting[j].dataset.resortname;
+        resortlisting[j].classList.remove('selected');
+        resorts = document.querySelectorAll('.flickity-slider .resort-selector');
+        if(resortsName.includes(urlfound)){
+            console.log('query map found');
+            console.log('found resort 3 tag');
+            console.log(resortlisting[j]);
+            resortlisting[j].classList.add('selected');
+            console.log(resortlisting[j]);
+            flkty.insert( resortlisting[j]);
+            flkty.reloadCells();
+            
+            setTimeout(() => {
+                flkty.resize();
+                console.log("resized");
+            }, "100");
+
+            setTimeout(() => {
+                gallery.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }); 
+            }, "1000"); 
+
+            setTimeout(() => {
+                flkty.resize();
+                console.log("resized");
+            }, "1000");
+
+            gallery.classList.add('active');
+            map.classList.add('hide');
+            flkty.resize();
+            noresults.classList.remove('active');
+        }
+    }
+
+}

@@ -56,7 +56,7 @@
 <div class="resorts-list"></div>
 <script id="entry-template" type="text/x-handlebars-template">
 {{#each this}}
-  <div  data-island="{{Island}}" data-tags="{{Tags}}" class="gallery-cell resort-selector">
+  <div data-resortName="{{#dashes}}{{ResortTitle}}{{/dashes}}" data-island="{{Island}}" data-tags="{{Tags}}" class="gallery-cell resort-selector">
     <div class="Sandals-Saint-Montego flex resort-wrapper">
       <div class="left-resort-details">
         <div class="resort-image">
