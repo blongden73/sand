@@ -416,6 +416,13 @@ if (window.location.href.indexOf("?") > -1) {
     var urlfound = urlSplit[1];
     console.log(urlfound)
 
+    var description = document.querySelectorAll('.resort-description-list');
+    for(i=0; i<description.length; i++) {
+        var html = description[i].innerText.trim().replace(/[^\r\n]+/g, '<li>$&</li>');
+        console.log(html);
+        description[i].innerHTML = html;
+    }
+
     for(j=0; j < resortlisting.length; j++) {
         var resortsName = resortlisting[j].dataset.resortname;
         resortlisting[j].classList.remove('selected');
