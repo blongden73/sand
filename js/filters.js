@@ -267,7 +267,7 @@ for(i=0; i < tags.length; i++) {
         // var resortsData = resorts[g].dataset.tags;
         // }
         console.log(this.innerText.toLowerCase());
-        if(!this.parentNode.classList.contains('clicked') && clicks <= 1 ){
+        if(!this.parentNode.classList.contains('clicked') && clicks <= 3 ){
             // this.classList.toggle('selected');
             // var topush = this.innerText.toLowerCase();
             // console.log('topush');
