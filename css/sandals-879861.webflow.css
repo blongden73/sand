@@ -312,7 +312,7 @@ body {
   display: flex;
   font-family: Open Sans, sans-serif;
   font-size: 22px;
-  padding: 0 0 40px 0;
+  padding: 20px 0 20px 0px;
   color: #fff;
   cursor: pointer;
 }
@@ -322,7 +322,7 @@ body {
 }
 
 .tabs div {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .ideal-for-title {
@@ -592,4 +592,8 @@ body { font-family: sans-serif; }
 
 .required {
   display: block;
+}
+
+.white {
+  color: #fff;
 }
