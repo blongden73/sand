@@ -317,6 +317,31 @@ body {
   cursor: pointer;
 }
 
+.buttons-wrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-top: -15px;
+  margin-right: 0 !important;
+}
+
+.back-button {
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  font-family: Open Sans, sans-serif;
+  font-size: 18px;
+  display: block;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.back-button:hover {
+  background-color: #fff;
+  color: #214f73;
+}
+
 .tabs > div {
   color: #fff;
 }

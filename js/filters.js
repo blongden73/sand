@@ -92,6 +92,7 @@ var resortlisting = document.querySelectorAll('.resorts-list .gallery-cell')
 var islands = document.querySelectorAll('.island-picker');
 var hero = document.querySelector('.hero');
 var noresults = document.querySelector('.no-results');
+var backButton = document.querySelector('.back-button');
 
 for(i=0; i < islands.length; i++) {
     islands[i].addEventListener('click', function(){
@@ -128,7 +129,6 @@ for(i=0; i < islands.length; i++) {
 }
 
 console.log(resortlisting, 'listing');
-
 
 refineFilters.addEventListener('click', function(){
     resorts = document.querySelectorAll('.flickity-slider .resort-selector');
@@ -458,3 +458,9 @@ if (window.location.href.indexOf("?") > -1) {
     }
 
 }
+
+backButton.addEventListener('click', function(){
+    reset();
+    gallery.classList.remove('active');
+      map.classList.remove('hide');
+  });
