@@ -273,6 +273,15 @@ body {
   margin-bottom: 10px;
 }
 
+.resort-image.map {
+  width: 100% !important;
+  object-fit: contain;
+}
+
+.resort-image.map img{
+  object-fit: contain !important;
+}
+
 .resort-image img {
   object-fit: cover;
   width: 100%;
@@ -299,6 +308,15 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+}
+
+.ideal-card svg {
+  width: 36px;
+  height: 36px;
+
+  path {
+    fill: #fff;
+  }
 }
 
 .ideal-card h3 {
