@@ -94,6 +94,7 @@ var hero = document.querySelector('.hero');
 var noresults = document.querySelector('.no-results');
 var backButton = document.querySelector('.back-button');
 
+
 for(i=0; i < islands.length; i++) {
     islands[i].addEventListener('click', function(){
         console.log('islands')
@@ -234,6 +235,13 @@ function reset(){
         suggestedTab[k].classList.add('active-tab');
     }
 }
+
+backButton.addEventListener('click', function(){
+    console.log('lic');
+    reset();
+    gallery.classList.remove('active');
+      map.classList.remove('hide');
+  });
 
 
 flikbuttonIcon.forEach((item,index) => {
@@ -410,6 +418,8 @@ setTimeout(() => {
     }
 }, "500");
 
+console.log(backButton, 'back');
+
 if (window.location.href.indexOf("?") > -1) {
     var url = window.location.href;
     var urlSplit = url.split('?');
@@ -451,16 +461,10 @@ if (window.location.href.indexOf("?") > -1) {
             }, "1000");
 
             gallery.classList.add('active');
+            gallery.classList.add('query');
             map.classList.add('hide');
             flkty.resize();
             noresults.classList.remove('active');
         }
     }
-
 }
-
-backButton.addEventListener('click', function(){
-    reset();
-    gallery.classList.remove('active');
-      map.classList.remove('hide');
-  });

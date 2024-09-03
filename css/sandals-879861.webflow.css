@@ -266,6 +266,10 @@ body {
   aspect-ratio: 5/3;
 }
 
+.gallery.active.query .back-button{
+  display: none;
+}
+
 .resort-image {
   aspect-ratio: 5 / 3;
   overflow: hidden;
